@@ -268,9 +268,9 @@ module Prawn
             when Prawn::Table::Cell
               e.document = @document
               e.width    = @column_widths[col_index]
-              e.horizontal_padding = C(:horizontal_padding)
-              e.vertical_padding   = C(:vertical_padding)    
-              e.border_width       = C(:border_width)
+              e.horizontal_padding = e.horizontal_padding ||  C(:horizontal_padding)
+              e.vertical_padding   = e.vertical_padding || C(:vertical_padding)    
+              e.border_width       = e.border_width || C(:border_width)
               e.border_style       = :sides
               e.align              = align 
               c << e
